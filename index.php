@@ -1,6 +1,7 @@
 <?php
 require_once( "classes/database.php" );
 require_once( "classes/view.php" );
+include( "classes/config.php" );
 //require_once( "classes/routes.php" );
 
 define( '__ROOT__', dirname(__FILE__) );
@@ -23,7 +24,7 @@ function call( $controller, $action ){
 $url = parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH );
 $pathComponents = explode( "/", trim( $url, "/" ) );
 
-$controller = ( isset( $pathComponents[0] ) ) ? $pathComponents[0] : "home";
+$controller = ( $pathComponents[0] ) ? $pathComponents[0] : "home";
 $action 	= ( isset( $pathComponents[1] ) ) ? $pathComponents[1] : "index";
 call( $controller, $action );
 
