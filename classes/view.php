@@ -1,6 +1,6 @@
 <?php
 
-class View{
+class TreeView{
 	public function render( $templateFile, array $data = array() ){
 
 		ob_start();
