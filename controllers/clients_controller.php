@@ -12,7 +12,15 @@ class ClientsController extends TreeController{
 	}
 
 	public function indexAction(){
-		$this->view->render( "/views/pages/home.php", [ "var1" => "var1 val" ] );
+		$data = array();
+
+		$this->view->render( "/views/clients/list.php", $data );
+	}
+
+	public function addAction(){
+		$data = array();
+
+		$this->view->render( "/views/clients/add.php", $data );
 	}
 
 

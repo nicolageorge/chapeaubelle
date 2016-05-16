@@ -1,5 +1,10 @@
 <?php
+require( __ROOT__ . '/classes/database.php' );
 
 class TreeModel{
-	function __construct(){}
+	protected $db;
+
+	function __construct(){
+		$this->db = new DB();
+	}
 }
