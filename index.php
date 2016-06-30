@@ -1,23 +1,38 @@
 <?php
-require_once( "classes/database.php" );
-require_once( "classes/view.php" );
-include( "classes/config.php" );
+include( "core/config.php" );
+
+//require_once( "classes/database.php" );
+//require_once( "classes/view.php" );
 //require_once( "classes/routes.php" );
 
 define( '__ROOT__', dirname(__FILE__) );
 
+spl_autoload_register(function ($class) {
+
+	$includePath = str_replace( '_', '/', strtolower( $class) ) . '.php';
+
+	var_dump( $includePath );
+
+    include $includePath;
+});
+
+
+
+
 function call( $controller, $action ){
+	/*
 	if( file_exists( __ROOT__ . "/controllers/" . $controller . "_controller.php" ) )
 		require_once( __ROOT__ . "/controllers/" . $controller . "_controller.php" );
 	else{
 		echo __ROOT__ . "/controllers/" . $controller . "_controller.php does not exist";
 		//die();
 	}
+	*/
 
-	$controller = $controller . "Controller";
+	$controller = "App_Controllers_" . $controller;
 	$controller = new $controller;
 
-	$action = $action. "Action";
+	$action = $action . "Action";
 	$controller->{ $action }();
 }
 
