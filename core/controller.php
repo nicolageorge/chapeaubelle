@@ -5,6 +5,6 @@ class Core_Controller{
 	protected $view;
 
 	function __construct(){
-		$this->view = new TreeView();
+		$this->view = new Core_View();
 	}
 }

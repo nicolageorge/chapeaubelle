@@ -8,11 +8,7 @@ include( "core/config.php" );
 define( '__ROOT__', dirname(__FILE__) );
 
 spl_autoload_register(function ($class) {
-
 	$includePath = str_replace( '_', '/', strtolower( $class) ) . '.php';
-
-	var_dump( $includePath );
-
     include $includePath;
 });
 
@@ -20,15 +16,6 @@ spl_autoload_register(function ($class) {
 
 
 function call( $controller, $action ){
-	/*
-	if( file_exists( __ROOT__ . "/controllers/" . $controller . "_controller.php" ) )
-		require_once( __ROOT__ . "/controllers/" . $controller . "_controller.php" );
-	else{
-		echo __ROOT__ . "/controllers/" . $controller . "_controller.php does not exist";
-		//die();
-	}
-	*/
-
 	$controller = "App_Controllers_" . $controller;
 	$controller = new $controller;
 

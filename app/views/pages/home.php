@@ -1,5 +1,5 @@
-<?php include( __ROOT__ . '/views/partials/header.php' ); ?>
-<?php include( __ROOT__ . '/views/partials/sidebar.php' ); ?>
+<?php include( __ROOT__ . '/app/views/partials/header.php' ); ?>
+<?php include( __ROOT__ . '/app/views/partials/sidebar.php' ); ?>
 
         <div id="page-wrapper">
             <div class="row">
@@ -37,4 +37,4 @@
         </div>
         <!-- /#page-wrapper -->
 
-<?php include( __ROOT__ . '/views/partials/footer.php' ); ?>
+<?php include( __ROOT__ . '/app/views/partials/footer.php' ); ?>

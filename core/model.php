@@ -1,6 +1,6 @@
 <?php
 
-class TreeModel{
+class Core_Model{
 	protected $db;
 
 	function __construct(){}
